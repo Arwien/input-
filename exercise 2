@@ -1,0 +1,33 @@
+#input a balance number to find out the relevant minimum payment
+
+ask=""
+answer_exit=["y","Y"]
+
+while ask not in answer_exit:
+    balance=input("What is the balance? ")  #get input
+
+    while True:
+        try:
+            balance = float(balance)
+            break   
+        except:
+            balance = input("Enter a real number!: ")  #make sure input is number
+
+    if balance <= 0:
+        print("穷鬼。再见。")
+        break  #make sure input is positive number
+
+    minimum1=10
+    minimum2=balance*0.021
+
+    if balance<=10:
+        min_payment=balance
+    else:
+        min_payment=max(minimum1,minimum2)
+
+    print(min_payment)
+
+    ask=input("是否退出？（Y/N）：")
+    answer=["Y","y","N","n"]
+    while ask not in answer:
+        ask=input("按Y/N谢谢：")  
