@@ -1,0 +1,6 @@
+name = input("enter whatever: ")
+while name.find(" ")!= -1:
+    f_slice=name[0:name.find(" ")]
+    name=name[(name.find(" ")+1):len(name)]
+    print(f_slice)
+print(name)
