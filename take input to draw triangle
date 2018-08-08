@@ -1,0 +1,12 @@
+n=int(input("how large do you want?: "))
+if n%2 == 0:
+    m=int(n/2)
+else:
+    m=int(n//2+1)
+for i in range(0,m):
+    x=0
+    for j in range(0,n):
+        x=x*10+1    
+    print(" "*(i-0)+str(x))
+    n=n-2
+    
