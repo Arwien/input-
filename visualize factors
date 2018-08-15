@@ -1,0 +1,21 @@
+#receive a number as the amount of rows and the amount of values in each row to print
+num=input("Maximum number to factorise: ")  
+if not int(num):
+  print("Invalid input")  #limit the input as integer
+else:
+  i=1  #i for each value in the row
+  v=1  #v for each row
+  num=int(num)
+  for v in range (1, (num+1)):  #print rows v times
+    line=""
+    for i in range (1, (num+1)):  #for each value(num in all) in the row
+      if i<=v:
+        if v%i==0:
+          n="*"
+        else:
+          n="-"
+      else:  
+        n="-"
+      line += "{:2}".format(n) #for each time i loops, line=line+newformat 
+    print(line)  #print this line v times
+    
