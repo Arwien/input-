@@ -1,0 +1,25 @@
+for i,m,n in zip(list("split"),list("11111"),list("asdfg")):
+	print(i,m,n)
+
+"""	
+s 1 a
+p 1 s
+l 1 d
+i 1 f
+t 1 g
+"""
+
+
+a = list("aplit")
+b = list("hello")
+for i in range(0,len(a)):
+	print("{:2}{:2}".format(a[i],b[i]))
+
+
+"""
+a h 
+p e 
+l l 
+i l 
+t o 
+"""
