@@ -1,0 +1,51 @@
+text = input("Text to compress? ")
+listext = list(text)
+
+for i in range(0,len(listext)-2):
+    if not "-" in listext[i]:  
+        for j in range(i+1,len(listext)-1):
+            if not "-" in listext[j]:
+                if listext[j] == listext[i]:
+                    listext[j] = "(-{:})".format(j-i)
+
+print("".join(listext))   
+
+
+
+Text to compress? hello
+hel(-1)o
+
+Text to compress? aardvark
+a(-1)rdv(-5)(-4)k
+
+
+
+
+"""
+test = "aardvark"
+change_test = list(test)
+change_test[3] = "(-4)"
+print("".join(change_test))
+"""
+
+text = input("Text to compress? ")
+listext = list(text)
+
+for i in range(0,len(listext)-1):
+    count = 0
+    if not "-" in listext[i]:      
+        for j in range(i+1,len(listext)):
+            if not "-" in listext[j]:
+                if listext[j] == listext[i]:
+                    if count == 0:
+                        listext[j] = "(-{:})".format(j-i)
+                        count = j
+                    else:
+                        listext[j] = "(-{:})".format(j-count)
+                        count = j
+
+print("".join(listext))            
+        
+        
+Text to compress? The cat in the hat
+The cat(-4)in(-3)(-5)(-11)(-11)(-4)(-3)(-11)(-6)        
