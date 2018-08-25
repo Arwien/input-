@@ -1,3 +1,5 @@
 # beginner exercise
 # input-interaction and loop
-# using while loop to keep asking for input till the input type meets expectation 
+# condition
+# string formatting
+# list, dic, information slicing and keyword counting 
