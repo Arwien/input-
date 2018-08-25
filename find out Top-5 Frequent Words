@@ -1,0 +1,44 @@
+def top5_words(text):
+    #form a list of splited words
+    text_list = text.split()
+    text_list.sort()
+ 
+    #form a dic of (word:frequency)
+    counting = {}
+    for item in text_list:
+        if item in counting:
+            counting[item] += 1
+        else:
+            counting[item] = 1
+    
+    #transfrom the dic into a list       
+    item_list = list(counting.items())
+    item_list.sort()
+    
+    #seperate the value from the dic and sort it
+    fre = list(counting.values())
+    fre.sort(reverse=True)
+    
+    top_list = []
+    for i in fre:
+        for (key, value) in item_list:
+            if value == i and key not in top_list:   #!!!!!!!!!!!!!!!!!!!!!!!!!key not in top_list
+                top_list.append(key)             
+
+    if len(top_list) >= 5:
+        new_tlist = []
+        for i in range(0, 5):
+            new_tlist.append(top_list[i])
+        top_list = new_tlist    
+
+    return top_list
+    
+    
+    
+    
+>>> top5_words("one one was a racehorse two two was one too")
+["one", "two", "was", "a", "racehorse"]
+>>> top5_words("buffalo buffalo buffalo chicken buffalo")
+["buffalo", "chicken"]
+>>> top5_words("the quick brown fox jumped over the lazy dog")
+["the", "brown", "dog", "fox", "jumped"]
