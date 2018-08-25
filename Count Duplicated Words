@@ -1,0 +1,25 @@
+def repeat_word_count(text, n):
+    text_list = list(text.split())
+    
+    counting = {}
+    for item in text_list:
+        if item in counting:
+            counting[item] += 1
+        else:
+            counting[item] = 1
+    
+    count_list = []
+    for (key, value) in list(counting.items()):
+        if value >= n:
+            count_list.append(key)
+      
+    count_list.sort()       
+    return count_list 
+    
+    
+>>> repeat_word_count("buffalo buffalo buffalo buffalo", 2)
+['buffalo']
+>>> repeat_word_count("one one was a racehorse two two was one too", 3)
+['one']
+>>> repeat_word_count("how much wood could a wood chuck chuck", 1)
+['a', 'chuck', 'could', 'how', 'much', 'wood']
