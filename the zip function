@@ -23,3 +23,22 @@ l l
 i l 
 t o 
 """
+
+
+
+
+#ask for massage and keytext input
+#and seperate each string into a list consists of a set of letters
+mes = list(input("Message? "))
+key = list(input("Keytext? "))
+
+#encode the meaasge letter by letter
+for i in range(0,len(mes)):  #using i as the message list index
+    num1 = ord(mes[i])-65    #calculate the converted number of each letter in message
+    num2 = ord(key[i])-65    #calculate the converted number of each letter in keytext
+    num3 = num1 + num2       #calculate the converted number of encoded letter
+    if num3 - 26 >= 0:       #the number should be in the range 0-25
+        num3 = num3 - 26     #wraps around any value larger than 25 
+    num3 += 65   
+    output = chr(num3)       #transform the number into letter
+    print("{:} {:} {:}".format(mes[i],num2,output))    
