@@ -1,0 +1,68 @@
+startime = input()
+duramin = int(input())
+
+start = startime.split(":")
+
+start_min = int(start[1])
+durahour = (start_min + duramin)//60
+new_time = int(start[0]) + durahour
+
+if new_time == 24:
+    hour = 0
+elif new_time > 24:
+    hour = new_time%24 
+else:
+    hour = new_time
+      
+minute = (start_min + duramin)%60
+
+print("{:0>2}".format(str(hour))+":"+"{:0>2}".format(str(minute)))
+
+
+Input:
+12:30
+47
+Program gave the following correct output:
+13:17
+
+
+Input:
+23:59
+7
+Program gave the following correct output:
+00:06
+
+
+Input:
+08:30
+185
+Program gave the following correct output:
+11:35
+
+
+Input:
+03:03
+593
+Program gave the following correct output:
+12:56
+
+
+Input:
+11:19
+715
+Program gave the following correct output:
+23:14
+
+
+Input:
+10:10
+52
+Program gave the following correct output:
+11:02
+
+
+Input:
+23:59
+70
+Program gave the following correct output:
+01:09
