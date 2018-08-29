@@ -1,0 +1,26 @@
+width = int(input("width: "))
+
+'''
+line = ""
+while line != "END":
+   line = input(":")
+   text_len = len(line)
+   if (width-text_len)%2!=0:
+      left = int((width-text_len)/2) + 1
+   else:
+      left = int((width-text_len)/2)
+   print("."*left+line+"."*(width-left-text_len))
+   line = input(":")
+'''
+
+
+while True:
+   line = input(":")
+   if line == "END":
+      break
+   text_len = len(line)
+   if (width-text_len)%2!=0:
+      left = int((width-text_len)/2) + 1
+   else:
+      left = int((width-text_len)/2)
+   print("."*left+line+"."*(width-left-text_len))
