@@ -1,0 +1,9 @@
+#[] is False
+def check_list(a):
+  if not a:
+    return "List is empty"
+  else:
+    return a
+
+print check_list([])
+print check_list([1,2])
