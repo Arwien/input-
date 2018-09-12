@@ -1,0 +1,27 @@
+def top5_words(text):
+    textli = text.split()
+    
+    tally = {}
+    for i in textli:
+        if i in tally:
+            tally[i] += 1
+        else:
+            tally[i] = 1
+    
+    wordcount = list(tally.items())
+    wordcount.sort()
+    
+    #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    def takesecond(element):
+        return element[1]
+    wordcount.sort(key=takesecond, reverse=True)
+    #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    
+    keyli = []
+    for (k,v) in wordcount:
+        keyli.append(k)      
+    
+    if len(keyli)>=5:
+        keyli = keyli[:5]
+    
+    return keyli
