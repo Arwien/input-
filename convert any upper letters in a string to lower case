@@ -1,0 +1,21 @@
+"""
+first, do the lowerChar(char) function
+then define a second function, lowerString(string)
+  on the first line inside lowerString, initialize a variable result = "" equal to the empty string
+  use a for loop with i and set result = result + lowerChar(string[i])
+  finally, return result
+"""
+
+
+def lowerChar(char):
+   if ord(char)>=65 and ord(char)<=90:
+      char = chr(ord(char)+(97-65))         #or use the char.lower()
+   else:
+      pass
+   return char
+
+def lowerString(string):
+   result = ""
+   for i in string:
+      result += lowerChar(i)
+   return result  
