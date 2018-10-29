@@ -10,3 +10,19 @@ def deli(item):
 
 summer = deli(board)
 print(summer)
+
+
+
+board = [["a","a",["a","a","a",["a","a"]]],["a","a","a"],["a","a","a",],["a","a","a"]]
+
+def deli(item):
+    new = ""
+    for i in item:
+        if type(i)==list:
+            i = deli(i)
+        new += i 
+    return new 
+
+for i in board:
+    i = deli(i)
+    print(" ".join(i))
