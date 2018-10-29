@@ -1,0 +1,12 @@
+board = [[1,1,[2,2,2,[4,4]]],[2,2,2],[3,3,3,],[4,4,4]]
+
+def deli(item):
+    summ = 0
+    for i in item:
+        if type(i)==list:
+            i = deli(i)
+        summ += i
+    return summ  
+
+summer = deli(board)
+print(summer)
