@@ -1,0 +1,50 @@
+"""
+print the contents of the list sorted in decreasing order of price, but falling back to increasing
+alphabetical order when the items have the same price
+"""
+
+product = [("c", 5.), ("s", 3.5), ("b", 3.5), ("p", 6.)]
+
+
+#method 1
+new = []
+for (name, price) in product:
+    new.append((-price, name))
+print(new)
+for (n_price, name) in sorted(new):
+    print("name", name, "price", -n_price)
+
+print()
+    
+    
+#method2
+count = {}
+for (name, price) in product:
+    if price not in count:
+        count[price] = []
+        count[price].append(name)
+    else:
+        count[price].append(name)
+print(count)
+
+key_li = list(count.keys())
+key_li.sort(reverse=True)
+for i in key_li:
+    product_li = count[i]
+    product_li.sort()
+    for j in product_li:
+        print("name", j, "price", i)
+        
+        
+        
+[(-5.0, 'c'), (-3.5, 's'), (-3.5, 'b'), (-6.0, 'p')]
+name p price 6.0
+name c price 5.0
+name b price 3.5
+name s price 3.5
+
+{3.5: ['s', 'b'], 5.0: ['c'], 6.0: ['p']}
+name p price 6.0
+name c price 5.0
+name b price 3.5
+name s price 3.5
