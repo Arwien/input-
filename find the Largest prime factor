@@ -1,0 +1,19 @@
+#idea from: https://math.stackexchange.com/questions/389675/largest-prime-factor-of-600851475143
+
+
+r = 600851475143
+f = []
+i = 2
+check = True
+
+while check:
+    if r%i==0:
+        f.append(i)
+        r = r/i
+    else:
+        i += 1
+    
+    if i>r:
+        check = False        
+
+print(f)
